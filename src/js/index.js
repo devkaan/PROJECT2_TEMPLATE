@@ -54,7 +54,7 @@ window.onload = function setblockqu() {
 
 ///////////////////////////////// gotopbtn ////////////////////////////
 //Get the button
-let container = document.getElementsByClassName('mcontainer')[0];
+let container = document.getElementsByClassName('cont')[0];
 var goTopBtn = document.getElementById("gotopbtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -75,27 +75,33 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 
-/*
+/* // random cool bg (optional)
 function randombgcolor() {
     var x = Math.floor(Math.random() * 256);
     var y = Math.floor(Math.random() * 256);
     var z = Math.floor(Math.random() * 256);
     var bgColor = "rgb(" + x + "," + y + "," + z + ",0.8)";
-    document.getElementById('gotopbtn').style.backgroundColor = bgColor;
+    document.getElementsByTagName('body')[0].style.background = bgColor;
 }
-randombgcolor();
+setInterval(randombgcolor,1100);
 */
 
-
-function settextinfos() {
-    let alltextdates = document.getElementsByClassName('date');
-    let alltexticons = document.getElementsByClassName('dateicon');
-    let alltextauthors = document.getElementsByClassName('author');
-    let allauthoricons = document.getElementsByClassName('authoricon');
-    for (var i = 0; i < alltextdates.length; i++) {
-        if (alltextdates[i].textContent.length == '0') alltexticons[i].style.display = "none";
-        if (alltextauthors[i].textContent.length == '0') allauthoricons[i].style.display = "none";
-        if (alltextdates[i].textContent.length == '0' && alltextauthors[i].textContent.length == '0') document.getElementsByClassName('textinfo')[i].style.display = 'none';
+$('#bell').click((e)=>{
+    if($('.notifications').css('display')=='none'){
+        $('.notifications').show(300)
     }
-}
-settextinfos();
+    else{
+        $('.notifications').hide(300)
+    }
+    
+})
+
+$('#more').click((e)=>{
+    if($('.options').css('display')=='none'){
+        $('.options').show(300)
+    }
+    else{
+        $('.options').hide(300)
+    }
+    
+})

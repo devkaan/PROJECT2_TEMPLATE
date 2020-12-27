@@ -30,8 +30,8 @@ body {
   color: #f3f0e2;
   background: #f0f0f0;
   color: #222;
-  -webkit-transition: 300ms all;
-  transition: 300ms all;
+  -webkit-transition: 500ms all;
+  transition: 500ms all;
 }
 
 .cont {
@@ -56,12 +56,13 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px 50px 0px 50px;
+  padding: 10px 0px;
 }
 
 .cont .headercont .logo img {
-  max-width: 150px;
-  max-height: 150px;
+  margin-left: 10px;
+  max-width: 120px;
+  max-height: 120px;
   border-radius: 50%;
 }
 
@@ -96,24 +97,58 @@ body {
 
 .cont .right .notif .notifications {
   position: absolute;
+  top: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   min-width: 300px;
   max-width: 400px;
+  max-height: 600px;
   width: 100%;
   margin-top: 10px;
   padding: 10px;
-  right: -125px;
+  border-radius: 5px;
   background: #333;
   color: #f1f1f1;
+  display: none;
 }
 
-.cont .right .notif .notifications ul li {
+.cont .right .notif .notifications .arrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #333;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.cont .right .notif .notifications ul li a {
   padding: 5px;
+  color: #f1f1f1;
+  text-decoration: none;
 }
 
 .cont .right .notif .notifications .notiftime {
-  margin-right: 8px;
-  opacity: .8;
+  opacity: 0.8;
   font-size: 12px;
+}
+
+.cont .right .notif .show_notif {
+  opacity: 0.95;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cont .search {
@@ -138,6 +173,234 @@ body {
 
 .cont .search i {
   color: #f1f1f1;
+}
+
+.cont .cright {
+  background: #222;
+  padding: 5px;
+  max-width: 40px;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.cont .center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  max-width: 900px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.cont .center .centercont {
+  min-width: 600px;
+  max-width: 600px;
+}
+
+.cont .center .centercont .posts .post {
+  min-width: 600px;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.cont .center .centercont .posts .post .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.cont .center .centercont .posts .post .header .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.cont .center .centercont .posts .post .header .user img {
+  min-width: 60px;
+  max-width: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.cont .center .centercont .posts .post .header .user a {
+  color: #121212;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.cont .center .centercont .posts .post .header .more {
+  margin-right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  background: #353535;
+  width: 25px;
+  height: 25px;
+  color: #f1f1f1;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 14px;
+  display: block;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.cont .center .centercont .posts .post .header .more .options {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-90%);
+          transform: translateX(-90%);
+  min-width: 200px;
+  margin-top: 10px;
+  padding: 10px;
+  padding-bottom: 0px;
+  border-radius: 5px;
+  background: #333;
+  color: #f1f1f1;
+  display: none;
+}
+
+.cont .center .centercont .posts .post .header .more .options .arrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #333;
+  position: absolute;
+  top: -10px;
+  right: 6%;
+  -webkit-transform: translateX(6%);
+          transform: translateX(6%);
+}
+
+.cont .center .centercont .posts .post .header .more .options ul li {
+  margin-bottom: 14px;
+}
+
+.cont .center .centercont .posts .post .header .more .options ul li a {
+  padding: 5px;
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.cont .center .centercont .posts .post .header .more .options .notiftime {
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+.cont .center .centercont .posts .post .article {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.cont .center .centercont .posts .post .article p.ptext {
+  display: block;
+  margin-bottom: 15px;
+  font-family: "Work sans";
+}
+
+.cont .center .centercont .posts .post .article img {
+  max-width: 600px;
+  min-width: 600px;
+  border-radius: 5px;
+}
+
+.cont .center .centercont .posts .post .article video {
+  max-width: 600px;
+  min-width: 600px;
+}
+
+.cont .center .centercont .posts .buttons {
+  margin-bottom: 5px;
+}
+
+.cont .center .centercont .posts .likes {
+  margin-bottom: 5px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.cont .center .centercont .posts .comments {
+  margin-bottom: 5px;
+}
+
+.cont .center .centercont .posts .comments .comment {
+  font-size: 15px;
+}
+
+.cont .center .centercont .posts .comments .comment .uname {
+  font-weight: 500;
+}
+
+.cont .center .centercont .posts .pdate {
+  margin-bottom: 5px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.cont .center .centercont .sendcomment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+.cont .center .centercont .sendcomment input[type="text"] {
+  padding: 15px 10px;
+  padding-right: 60px;
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 0px solid rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+}
+
+.cont .center .centercont .sendcomment button {
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  padding: 15px 10px;
+  background: #287232;
+  color: #dbdbdb;
+  font-weight: 500;
+  height: 50px;
+  font-size: 15px;
+}
+
+.cont .cright {
+  margin-left: 10px;
 }
 
 body.dark {
